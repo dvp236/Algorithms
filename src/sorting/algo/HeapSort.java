@@ -1,4 +1,9 @@
 package sorting.algo;
+/**
+ * 
+ * @author dharmik
+ * Implementing HeapSort Algorithm
+ */
 
 public class HeapSort {
 
