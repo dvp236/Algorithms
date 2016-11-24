@@ -1,4 +1,7 @@
 package sorting.algo;
+
+import java.util.Arrays;
+
 /**
  * 
  * @author dharmik
@@ -8,12 +11,33 @@ package sorting.algo;
 public class HeapSort {
 	private int[] heap;
 	private int size;
+	
 	private void buildHeap(){
-		
+		for(int k=size/2; k>0; k--){
+			percolateDown(k);
+		}
 	}
+	
 	private void percolateDown(int pos){
+		int tmp = heap[pos];
+		int child;
+		
+		while(pos*2 < size){
+			child = pos*2;
+			if(heap[child] > heap[child+1]) child++;
+			
+			if(heap[child] < tmp)
+				heap[pos] = heap[child];
+			else 
+				break;
+			
+			pos = child;
+		}
+		
+		heap[pos] = tmp;
 		
 	}
+	
 	public void heapSort(int[] a){
 		size=a.length;
 		heap = new int[size+1];
@@ -24,16 +48,24 @@ public class HeapSort {
 			int temp = heap[k];
 			heap[k] = heap[1];
 			heap[1] = temp;
-			//size--;
+			size--;
 			percolateDown(1);
 		}
-		for(int k = 1; k < heap.length-1; k++) 
+		for(int k = 0; k < heap.length-1; k++) {
+			System.out.println(heap[k]);
 	         a[k] = heap[heap.length - 1 - k];
-		//printHeap();
-	}
-	public static void main(String[] args) {
-		// TODO Auto-generated method stub
+		}
 
+	}
+	
+	public static void main(String[] args) {
+
+		int[] a = new int[]{3,5,2,1,7,9,4};
+		HeapSort hs = new HeapSort();
+		hs.heapSort(a);
+		System.out.println(Arrays.toString(a));
+		
+		
 	}
 
 }
