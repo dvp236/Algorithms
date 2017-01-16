@@ -4,7 +4,7 @@ import java.math.BigInteger;
 
 /*
  * 
- * Carryout Multiplicatoin of large numbers
+ * Carry out Multiplication of large numbers
  * for example below numbers 
  * x= 3141592653589793238462643383279502884197169399375105820974944592
  * y= 2718281828459045235360287471352662497757247093699959574966967627
