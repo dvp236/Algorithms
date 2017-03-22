@@ -53,6 +53,7 @@ public class QuickSort {
 	}
 	
 	//Just another implementation of Partition Subroutine
+	//Time Complexity: O(n)
 	private static int partition2(int[] a, int lo, int hi){
 		int pivot = a[lo];
 		int i = lo + 1;
