@@ -59,7 +59,7 @@ public class Percolation {
 		
 	}
 	
-	public int numberOfOpensites(){
+	public int numberOfOpenSites(){
     	
     	// number of open sites
     	return countOpensites;
@@ -108,7 +108,7 @@ public class Percolation {
 	
 	public static void main(String[] args){
 		Percolation grid = new Percolation(5);
-		System.out.println(grid.numberOfOpensites());
+		System.out.println(grid.numberOfOpenSites());
 		grid.open(1, 3);
 		grid.open(2, 3);
 		grid.open(3, 3);
