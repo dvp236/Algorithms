@@ -75,17 +75,17 @@ public class PercolationStats {
     	
     	 int n = Integer.parseInt(args[0]);
     	 int T = Integer.parseInt(args[1]);
-    	 
-    	 PercolationStats ps = new PercolationStats(n, T);
-    	 String mean = String.format("%-24s= %s","mean",ps.mean());
-    	 String stddev = String.format("%-24s= %s","stddev",ps.stddev());
-    	 String confResult = "["+ps.confidenceLo()+", "+ps.confidenceHi()+"]";
-    	 String conf = String.format("%-24s= %s","95% confidence interval",confResult);
-    	 
-    	 
-    	 System.out.println(mean);
-    	 System.out.println(stddev);
-    	 System.out.println(conf);
+//    	 
+//    	 PercolationStats ps = new PercolationStats(n, T);
+//    	 String mean = String.format("%-24s= %s","mean",ps.mean());
+//    	 String stddev = String.format("%-24s= %s","stddev",ps.stddev());
+//    	 String confResult = "["+ps.confidenceLo()+", "+ps.confidenceHi()+"]";
+//    	 String conf = String.format("%-24s= %s","95% confidence interval",confResult);
+//    	 
+//    	 
+//    	 System.out.println(mean);
+//    	 System.out.println(stddev);
+//    	 System.out.println(conf);
      }
 
 }
