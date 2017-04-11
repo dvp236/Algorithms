@@ -70,10 +70,13 @@ public class SearchBitonicArray {
 				}
 				hi = mid - 1;
 			}
+			
+			//what if third case 
+			//like mid
 		}
 		return false;
 	}
-	
+	//refer agian -> http://stackoverflow.com/questions/19372930/given-a-bitonic-array-and-element-x-in-the-array-find-the-index-of-x-in-2logn
 	public static void main(String[] args){
 		int a[] = new int[]{1,2,3,4,5,6,7};
 		int b[] = new int[]{7,6,5,4,3,2,1};
