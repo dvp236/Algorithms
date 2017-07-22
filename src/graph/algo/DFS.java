@@ -58,8 +58,33 @@ public class DFS {
 		if ( v < 0 || v >= V) throw new IllegalArgumentException("Vertex must be between 0 and "+V);
 	}
 	
+	/**
+	 * For unit testing of written apis.
+	 * @param args
+	 * 
+	 */
 	public static void main(String[] args) {
+		UndirectedGraph ug = new UndirectedGraph(15);
+		ug.addEdge(0, 1);
+		ug.addEdge(0, 2);
+		ug.addEdge(1, 3);
+		ug.addEdge(2, 3);
+		ug.addEdge(2, 4);
+		ug.addEdge(3, 4);
 		
+		ug.addEdge(5, 6);
+		ug.addEdge(5, 7);
+		
+		ug.addEdge(8, 9);
+		ug.addEdge(9, 14);
+		ug.addEdge(8, 13);
+		ug.addEdge(14, 10);
+		ug.addEdge(11,12);
+		ug.addEdge(10, 11);
+		
+		DFS search = new DFS(ug, 10);
+		System.out.println(search.marked(8));
+		System.out.println("total connected components: "+search.count());
 	}
 
 }
