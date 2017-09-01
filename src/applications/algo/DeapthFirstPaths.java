@@ -1,9 +1,8 @@
 package applications.algo;
 
 
-import java.util.Stack;
 
-import edu.princeton.cs.algs4.DepthFirstDirectedPaths;
+import edu.princeton.cs.algs4.Stack;
 import edu.princeton.cs.algs4.StdOut;
 import graph.algo.UndirectedGraph;
 
@@ -17,7 +16,13 @@ public class DeapthFirstPaths {
 	private int[] edgeTo; //edge to previous vertex;
 	private final int s;
 	
-
+	/**
+	 * Takes in Undirected Graph {@code G} and source vertex {@code s} and 
+	 * traverses in Depth first search manner
+	 * @param G the graph 
+	 * @param s the source vertex
+	 * @throws IllegalArgumentException if vertex not in {@code 0 <= v < V}
+	 */
 	public DeapthFirstPaths(UndirectedGraph G, int s) {
 		this.s = s;
 		edgeTo = new int[G.V()];
@@ -36,16 +41,29 @@ public class DeapthFirstPaths {
 		}
 	}
 	
+	/**
+	 * This method takes in vertex {@code v} and returns if there is path from source {@code s} 
+	 * to vertex {@code v}
+	 * @param v the vertex
+	 * @return {@code true} if  there is a path, {@code false} otherwise.
+	 * @throws IllegalArgumentException if vertex {@code v} not in {@code 0 <= v < V}
+	 */
 	public boolean hasPathTo(int v) {
 		validateVertex(v);
 		return marked[v];
 	}
 	
+	/**
+	 * Takes in vertex {@code v} and Returns the full path from source {@code s} to vertex {@code v}
+	 * @param v the vertex
+	 * @return the sequence of vertices on the path as an Iterable
+	 * @throws IllegalArgumentException if vertex not in {@code 0 <= v < V}
+	 */
 	public Iterable<Integer> pathTo(int v) {
 		validateVertex(v);
 		if(!hasPathTo(v)) return null;
 		Stack<Integer> path = new Stack<Integer>();
-		int w = edgeTo[v];
+		int w = v;
 		while(w != s) {
 			path.push(w);
 			w = edgeTo[w];
@@ -54,6 +72,7 @@ public class DeapthFirstPaths {
 		return path;
 	}
 	
+	//check if v is valid argument 
 	private void validateVertex(int v) {
 		int V = marked.length;
 		if ( v < 0 || v > V - 1 ) throw new IllegalArgumentException("Vertex should be between 0 and "+V);
@@ -61,16 +80,15 @@ public class DeapthFirstPaths {
 	
 	public static void main(String[] args) {
 		// TODO Auto-generated method stub
-		UndirectedGraph G = new UndirectedGraph(9);
-		G.addEdge(0, 1);
+		UndirectedGraph G = new UndirectedGraph(6);
+		G.addEdge(0, 5);
+		G.addEdge(2, 4);
+		G.addEdge(2, 3);
 		G.addEdge(1, 2);
-		G.addEdge(3, 2);
+		G.addEdge(0, 1);
 		G.addEdge(3, 4);
-		G.addEdge(1, 5);
-		G.addEdge(5, 7);
-		G.addEdge(7, 8);
-//		G.addEdge(2, 4);
-//		G.addEdge(3, 4);
+		G.addEdge(3, 5);
+		G.addEdge(0, 2);
 		int s = 0;
 		DeapthFirstPaths dfs = new DeapthFirstPaths(G, 0);
 		for(int v=0; v < G.V(); v++){
@@ -78,7 +96,7 @@ public class DeapthFirstPaths {
                 StdOut.printf("%d to %d:  ", s, v);
                 for (int x : dfs.pathTo(v)) {
                     if (x == s) StdOut.print(x);
-                    else        StdOut.print( x+"-" );
+                    else        StdOut.print( "-" + x);
                 }
                 StdOut.println();
             }
