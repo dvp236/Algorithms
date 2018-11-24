@@ -152,7 +152,7 @@ public class SuccessorWithDelete {
 		s.remove(3);
 		s.remove(1);
 		s.remove(5);
-		System.out.println(s.successor(2));
+		System.out.println(s.successor(6));
 
 	}
 

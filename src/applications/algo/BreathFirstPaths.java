@@ -30,7 +30,7 @@ public class BreathFirstPaths {
 		edgeTo = new int[G.V()];
 		distTo = new int[G.V()];
 		for ( int v = 0; v < G.V(); v++) {
-			distTo[v] = Integer.MAX_VALUE;
+			distTo[v] = Integer.MIN_VALUE;
 		}
 		bfs(G,s);
 		

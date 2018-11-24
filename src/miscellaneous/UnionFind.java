@@ -85,7 +85,7 @@ class QuickUnion{
 		//then we will have to increase size of broot by sz[aroot] (since whole tree is under broot now)
 		if(sz[aroot] < sz[broot]){
 			points[aroot] = broot;
-			sz[b] += sz[a];
+			sz[broot] += sz[aroot];
 		}else{
 			points[broot] = aroot;
 			sz[aroot] += sz[broot];
