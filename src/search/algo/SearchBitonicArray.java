@@ -80,8 +80,8 @@ public class SearchBitonicArray {
 	public static void main(String[] args){
 		int a[] = new int[]{1,2,3,4,5,6,7};
 		int b[] = new int[]{7,6,5,4,3,2,1};
-		int c[] = new int[]{1,3,5,8,12,16,17,18,9,2,0};
-		System.out.println(searchBitonic(2, c, 0, c.length-1));
+		int c[] = new int[]{1,3,5,8,12,16,17,18,9,4,2,0};
+		System.out.println(searchBitonic(4, c, 0, c.length-1));
 	}
 
 }

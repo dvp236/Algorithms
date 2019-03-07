@@ -4,7 +4,7 @@ package applications.algo;
 
 import edu.princeton.cs.algs4.Stack;
 import edu.princeton.cs.algs4.StdOut;
-import graph.algo.UndirectedGraph;
+import graph.algo.Graph;
 
 /**
  * 
@@ -23,7 +23,7 @@ public class DeapthFirstPaths {
 	 * @param s the source vertex
 	 * @throws IllegalArgumentException if vertex not in {@code 0 <= v < V}
 	 */
-	public DeapthFirstPaths(UndirectedGraph G, int s) {
+	public DeapthFirstPaths(Graph G, int s) {
 		this.s = s;
 		edgeTo = new int[G.V()];
 		marked = new boolean[G.V()];
@@ -31,7 +31,7 @@ public class DeapthFirstPaths {
 		dfs(G,s);
 	}
 	
-	private void dfs(UndirectedGraph G, int v) {
+	private void dfs(Graph G, int v) {
 		marked[v] = true;
 		for(int w : G.adj(v)) {
 			if(!marked[w]) {
@@ -80,7 +80,7 @@ public class DeapthFirstPaths {
 	
 	public static void main(String[] args) {
 		// TODO Auto-generated method stub
-		UndirectedGraph G = new UndirectedGraph(6);
+		Graph G = new Graph(6);
 		G.addEdge(0, 5);
 		G.addEdge(2, 4);
 		G.addEdge(2, 3);

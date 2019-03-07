@@ -3,7 +3,7 @@ package applications.algo;
 import java.util.Arrays;
 
 import edu.princeton.cs.algs4.Queue;
-import graph.algo.UndirectedGraph;
+import graph.algo.Graph;
 
 public class BFSConnectedComponent {
 	private boolean[] marked;
@@ -16,7 +16,7 @@ public class BFSConnectedComponent {
 	 * 
 	 * @param G the undirected graph
 	 */
-	public BFSConnectedComponent(UndirectedGraph G) {
+	public BFSConnectedComponent(Graph G) {
 		marked = new boolean[G.V()];
 		id = new int[G.V()];
 		size = new int[G.V()];
@@ -30,7 +30,7 @@ public class BFSConnectedComponent {
 	}
 	
 	//Breath First Search of graph G with source vertex v 
-	private void bfs(UndirectedGraph G, int s) {
+	private void bfs(Graph G, int s) {
 		marked[s] = true;
 		id[s] = count; 
 		size[count]++;
@@ -107,7 +107,7 @@ public class BFSConnectedComponent {
 	}
 	
 	public static void main(String[] args) {
-		UndirectedGraph ug = new UndirectedGraph(15);
+		Graph ug = new Graph(15);
 		ug.addEdge(0, 1);
 		ug.addEdge(0, 2);
 		ug.addEdge(1, 3);

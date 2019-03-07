@@ -14,13 +14,13 @@ public class BFS {
 	private boolean[] markTo;
 	private int[] distTo;
 	
-	public BFS(UndirectedGraph G, int s) {
+	public BFS(Graph G, int s) {
 		markTo = new boolean[G.V()];
 		distTo = new int[G.V()];
 		bfs(G, s);
 	}
 	
-	public void bfs(UndirectedGraph G, int s) {
+	public void bfs(Graph G, int s) {
 		Queue<Integer> q = new Queue<Integer>();
 		markTo[s] = true;
 		for( int v = 0; v < G.V(); v++) {
@@ -48,7 +48,7 @@ public class BFS {
 
 	
 	public static void main(String[] args) {
-		UndirectedGraph ug = new UndirectedGraph(5);
+		Graph ug = new Graph(5);
 		ug.addEdge(0, 1);
 		ug.addEdge(0, 2);
 		ug.addEdge(1, 3);

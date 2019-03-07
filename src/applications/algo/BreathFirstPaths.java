@@ -5,7 +5,7 @@ package applications.algo;
 import edu.princeton.cs.algs4.Queue;
 import edu.princeton.cs.algs4.Stack;
 import edu.princeton.cs.algs4.StdOut;
-import graph.algo.UndirectedGraph;
+import graph.algo.Graph;
 
 /**
  * 
@@ -24,7 +24,7 @@ public class BreathFirstPaths {
 	 * @param G the graph
 	 * @param s the source vertex
 	 */
-	public BreathFirstPaths(UndirectedGraph G, int s) {
+	public BreathFirstPaths(Graph G, int s) {
 		this.s = s;
 		marked = new boolean[G.V()];
 		edgeTo = new int[G.V()];
@@ -36,7 +36,7 @@ public class BreathFirstPaths {
 		
 	}
 
-	private void bfs(UndirectedGraph G, int s) {
+	private void bfs(Graph G, int s) {
 		marked[s] = true;
 		distTo[s] = 0;
 		edgeTo[s] = s;
@@ -110,7 +110,7 @@ public class BreathFirstPaths {
 	 * @param args
 	 */
 	public static void main(String[] args) {
-		UndirectedGraph G = new UndirectedGraph(8);
+		Graph G = new Graph(8);
 		G.addEdge(0, 5);
 		G.addEdge(2, 4);
 		G.addEdge(2, 3);

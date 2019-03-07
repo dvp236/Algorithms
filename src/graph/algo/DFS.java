@@ -16,13 +16,13 @@ public class DFS {
 	 * @param s the source vertex
 	 * @throws IllegalArgumentException if vertex not in {@code 0 <= v < V}
 	 */
-	public DFS(UndirectedGraph G, int s) {
+	public DFS(Graph G, int s) {
 		marked = new boolean[G.V()];
 		dfs(G,s);
 	}
 	
 	//dfs of graph G with source v
-	private void dfs(UndirectedGraph G, int v) {
+	private void dfs(Graph G, int v) {
 		marked[v] = true;
 		count++;
 		for(int u: G.adj(v)) {
@@ -64,7 +64,7 @@ public class DFS {
 	 * 
 	 */
 	public static void main(String[] args) {
-		UndirectedGraph ug = new UndirectedGraph(15);
+		Graph ug = new Graph(15);
 		ug.addEdge(0, 1);
 		ug.addEdge(0, 2);
 		ug.addEdge(1, 3);
